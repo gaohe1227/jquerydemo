@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery - 添加元素</title>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $("#btn1").click(function(){
+	  $("p").append("<b>追加文本</b>");
+  });
+  $("#btn2").click(function(){
+      $("ol").append("<li>追加列表选项</li>");
+  });
+  $("#btn3").click(function(){
+      $("p").prepend("<b>在前面添加文本</b>");
+  });
+  $("#btn4").click(function(){
+      $("ol").prepend("<li>在前面添加列表选项</li>");
+  });
+})
+
+
+
+</script>
+
+</head>
+<body>
+<p>这是一个段落。</p>
+<p>这是另外一个段落。</p>
+<ol>
+<li>List item 1</li>
+<li>List item 2</li>
+<li>List item 3</li>
+</ol>
+<button id="btn1">追加文本</button>
+<button id="btn2">追加列表项</button>
+<button id="btn3">在前面添加文本</button>
+<button id="btn4">在前面添加列表项</button>
+<hr>
+<img src="../image/w3clogo.png" >
+<br><br>
+<script type="text/javascript">
+$(function(){
+  $("#before").click(function(){
+      $("img").before("在前面添加文本"+new Date());
+      
+  });
+  $("#after").click(function(){
+	  $("img").after("在后面添加文本"+new Date());
+      
+  });
+ 
+})
+
+function afterText(){
+    var txt1="<b>I </b>";                    // 使用 HTML 创建元素
+    var txt2=$("<i></i>").text("love ");     // 使用 jQuery 创建元素
+    var txt3=document.createElement("big");  // 使用 DOM 创建元素
+    txt3.innerHTML="jQuery!";
+    $("img").after(txt1,txt2,txt3);          // 在图片后添加文本
+}
+ 
+
+</script>
+<button id="before">之前插入</button>
+<button id="after">之后插入</button>
+<button onclick="afterText()">之后插入</button>
+</body>
+</html>

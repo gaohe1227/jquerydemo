@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery - 删除元素</title>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#remove").click(function(){
+		$("p").remove();
+	});
+ 
+	$("#empty").click(function(){
+	    $("#div1").empty();
+	  });
+	$("#remove1").click(function(){
+        $("p").remove(".italic");
+      });
+});
+
+
+</script>
+</head>
+<body>
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+这是 div 中的一些文本。
+<p>这是在 div 中的一个段落。</p>
+<p>这是在 div 中的另外一个段落。</p>
+
+</div>
+<br>
+<button id="remove">移除div元素</button>
+<button id="empty">清空div元素</button>
+<p>这是一个段落。</p>
+<p class="italic"><i>这是另外一个段落。</i></p>
+<p class="italic"><i>这是另外一个段落。</i></p>
+<button id="remove1">移除所有  class="italic" 的 p 元素。</button>
+</body>
+</html>

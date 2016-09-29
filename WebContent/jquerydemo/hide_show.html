@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 效果 - 淡入淡出</title>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$("p").click(function(){
+		$(this).hide();
+	});
+	$("#divhide").click(function(){
+		$(this).hide(1000)
+	});
+	$(".hide").click(function(){
+		//$(this).parents(".ex").hide(3000);
+		  $(this).parents(".ex").hide("slow");
+		
+	})
+	$("#hide").click(function(){
+		$("p").hide("3000");
+	});
+	   $("#show").click(function(){
+	        $("p").show("3000");
+	    });
+})
+
+</script>
+<style type="text/css"> 
+div.ex
+{
+    background-color:#e5eecc;
+    padding:7px;
+    border:solid 1px #c3c3c3;
+}
+</style>
+</head>
+<body>
+<p>如果你点我，我就会消失。</p>
+<p>继续点我!</p>
+<p>接着点我!</p>
+<div id="divhide">点击逐渐消失的div</div>
+<div class="ex">
+<button class="hide">点我隐藏</button>
+<p>站点名: Google<br> 
+站点 URL：http://www.google.com</p>
+</div>
+
+<h3>菜鸟教程</h3>
+<div class="ex">
+<button class="hide">点我隐藏</button>
+<p>站点名: 菜鸟教程<br> 
+站点 URL：http://www.runoob.com</p>
+
+</div>
+<p>如果你点击“隐藏” 按钮，我将会消失。</p>
+<button id="hide">隐藏</button>
+<button id="show">显示</button>
+</body>
+</html>

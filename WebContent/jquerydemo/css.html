@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery - 获取并设置 CSS 类</title>
+<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#add").click(function(){
+		$("h1,h2,p").addClass("importan blue");
+		$("div").addClass("important")
+	});
+	$("#remove").click(function(){
+        $("h1").removeClass("blue");
+    });
+	$("#toggle").click(function(){
+		$("h1,h2,p").toggleClass("blue");
+    });
+	$("#getCss").click(function(){ 
+		  alert("背景颜色 = " + $("#cssdiv1 p").css("background-color"));
+     
+    });
+	$("#addCss").click(function(){ 
+        $("#cssdiv1>p").css("background-color","yellow");
+   
+  });
+    $("#addCssmoew").click(function(){ 
+        $("#cssdiv1>p").css({"background-color":"yellow","font-size":"40px"});
+   
+  });
+})
+
+</script>
+<style type="text/css">
+.important
+{
+    font-weight:bold;
+    font-size:xx-large;
+}
+.blue
+{
+    color:blue;
+}
+</style>
+</head>
+<body>
+<h1>标题 1</h1>
+<h2>标题 2</h2>
+<p>这是一个段落。</p>
+<p>这是另外一个段落。</p>
+<div>这是一些重要的文本!</div>
+<br>
+<button id="add">为元素添加 class</button>
+<button id="remove">从元素中移除 class</button>
+<button id="toggle">切换 class</button>
+<br>
+<h3>这是一个标题</h3>
+<div id="cssdiv1">
+<p style="background-color:#ff0000">这是一个段落。</p>
+<p style="background-color:#00ff00">这是一个段落。</p>
+<p style="background-color:#0000ff">这是一个段落。</p>
+<button id="getCss">返回 p 元素的 background-color </button>
+<button id="addCss">设置 p元素的  单个属性值background-color </button>
+<button id="addCssmoew">设置 p元素的  多个属性值background-color </button>
+</div>
+</body>
+</html>
